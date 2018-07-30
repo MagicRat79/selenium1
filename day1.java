@@ -7,6 +7,7 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
 
@@ -23,11 +24,18 @@ public class day1
 				System.out.println(prop.getProperty("username"));
 				if (prop.getProperty("broswer").contains("chrome"))
 				{
-					System.setProperty(arg0, arg1)
+					System.setProperty("webdriver.chrome.driver","C:\\Users\\Karthi Test\\Downloads\\chromedriver.exe" );
+					
 					WebDriver driver = new ChromeDriver();
 				}
 				else if (prop.getProperty("broswer").contains("firefox"))
-				Webdriver driver = new Chromedriver();
+				{
+					System.setProperty("webdriver.chrome.driver","C:\\Users\\Karthi Test\\Downloads\\geckodriver.exe" );
+					
+					WebDriver driver = new FirefoxDriver();
+				}
+				driver.get("http://google.com");
+	}
 				
 
 }
